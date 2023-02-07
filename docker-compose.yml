@@ -1,0 +1,10 @@
+version: '3'
+services:
+  python3:
+    restart: always
+    build: .
+    container_name: 'spkrecg'
+    working_dir: '/var/local/'
+    tty: true
+    volumes:
+      - ./:/var/local/spkreg

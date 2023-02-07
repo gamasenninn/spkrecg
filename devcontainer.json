@@ -1,0 +1,27 @@
+{
+	"name": "dev-container", 
+	"dockerComposeFile": [
+		"../docker-compose.yml"
+	],
+	"service": "dev",
+	"remoteUser": "dev-user", 
+	"workspaceFolder": "/home/dev-user",
+	"extensions": [ 
+		"ms-python.python",
+		"dbaeumer.vscode-eslint",
+		"esbenp.prettier-vscode",
+		"kddejong.vscode-cfn-lint"
+	],
+	"settings": { // コンテナ内に追加するVS Codeの設定
+		"python.linting.pylintEnabled": false,
+		"python.linting.flake8Enabled": true,
+		"editor.formatOnSave": true,
+		"python.linting.flake8Args": [
+			"--max-line-length=150"
+		],
+		"eslint.workingDirectories": [
+			{ "mode": "auto" }
+		],
+		"cfnLint.path": "/home/jmc-dev/.pyenv/shims/cfn-lint",
+	}
+}
